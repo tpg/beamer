@@ -26,7 +26,11 @@ class Range implements RangeInterface
 
     protected function loadRange(): void
     {
-        preg_match('/bytes=(?<start>\d+)\-(?<end>\d+)?/m', $this->request->server('HTTP_RANGE', ''), $matches);
+        preg_match(
+            '/bytes=(?<start>\d+)\-(?<end>\d+)?/m',
+            $this->request->server('HTTP_RANGE', ''),
+            $matches
+        );
 
         $this->start = (int)Arr::get($matches, 'start', 0);
         $this->end = (int)Arr::get($matches, 'end', $this->filesize -1);
