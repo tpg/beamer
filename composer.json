@@ -1,0 +1,47 @@
+{
+    "name": "thepublicgood/beamer",
+    "description": "MP4 video file streamer for laravel",
+    "keywords": ["mp4", "video", "streaming", "laravel"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/tpg/beamer/issues",
+        "source": "https://github.com/tpg/beamer"
+    },
+    "authors": [
+        {
+            "name": "THEPUBLICGOOD",
+            "email": "makers@thepublicgood.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TPG\\Beamer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TPG\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^8.44"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.18",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-latest"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TPG\\Beamer\\BeamerServiceProvider"
+            ],
+            "aliases": {
+                "Beamer": "TPG\\Beamer\\Facades\\Beamer"
+            }
+        }
+    }
+}
