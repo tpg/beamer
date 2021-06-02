@@ -41,6 +41,4 @@ class TestCase extends Orchestra
             'Beamer' => Beamer::class,
         ];
     }
-
-
 }

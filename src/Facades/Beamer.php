@@ -18,7 +18,6 @@ class Beamer extends Facade
      *
      */
 
-
     protected static function getFacadeAccessor(): string
     {
         return 'beamer.facade';
