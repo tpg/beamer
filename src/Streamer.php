@@ -28,7 +28,6 @@ class Streamer
     protected function openStream(): void
     {
         $this->stream = $this->storage()->readStream($this->path());
-//        $this->stream = fopen($this->storage()->path($this->path()), 'rb');
 
         if (! $this->stream) {
             throw NotReadableException::withFilename($this->path());
@@ -48,9 +47,6 @@ class Streamer
             ->header('Content-Type', 'video/mp4')
             ->header('Content-Length', $this->range->size());
 
-//        header('Content-Type: video/mp4');
-//        header('Content-Length: '.$this->range->size());
-
         if (! $this->range->isRangeRequest()) {
             $response->setContent(file_get_contents($this->storage()->path($this->path())));
 
@@ -69,10 +65,6 @@ class Streamer
         $response->setStatusCode(206, 'Partial Content')
             ->header('Content-Length', $this->range->length())
             ->header('Content-Range', 'bytes '.$this->range->start().'-'.$this->range->end().'/'.$this->range->size());
-
-//        header('HTTP/1.1 206 Partial Content');
-//        header('Content-Length: '.$this->range->length());
-//        header('Content-Range: bytes '.$this->range->start().'-'.$this->range->end().'/'.$this->range->size());
 
         fseek($this->stream, $this->range->start());
 
