@@ -6,7 +6,6 @@ namespace TPG\Beamer;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Http\Response as HttpResponse;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -39,10 +38,6 @@ class Streamer
             RangeInterface::class,
             ['filesize' => $this->storage()->size($this->path())]
         );
-
-        Log::info('Range', [
-            'data' => $this->range->toArray(),
-        ]);
     }
 
     public function start()

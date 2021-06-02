@@ -62,14 +62,4 @@ class Range implements RangeInterface
             ? $this->end() - $this->start()
             : $this->size();
     }
-
-    public function toArray(): array
-    {
-        return [
-            'start' => $this->start,
-            'end' => $this->end,
-            'length' => $this->length(),
-            'size' => $this->filesize,
-        ];
-    }
 }
