@@ -6,5 +6,4 @@ namespace TPG\Beamer\Contracts;
 
 interface StreamerInterface
 {
-
 }

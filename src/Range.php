@@ -32,13 +32,13 @@ class Range implements RangeInterface
             $matches
         );
 
-        $this->start = (int)Arr::get($matches, 'start', 0);
-        $this->end = (int)Arr::get($matches, 'end', $this->filesize -1);
+        $this->start = (int) Arr::get($matches, 'start', 0);
+        $this->end = (int) Arr::get($matches, 'end', $this->filesize - 1);
     }
 
     public function isRangeRequest(): bool
     {
-        return (bool)$this->request->server('HTTP_RANGE');
+        return (bool) $this->request->server('HTTP_RANGE');
     }
 
     #[Pure]
