@@ -77,7 +77,6 @@ class Streamer
 
             $response->setContent($data);
             $response->sendContent();
-
         }
     }
 
