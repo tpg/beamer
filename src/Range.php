@@ -41,25 +41,21 @@ class Range implements RangeInterface
         return (bool) $this->request->server('HTTP_RANGE');
     }
 
-    #[Pure]
     public function size(): int
     {
         return $this->filesize;
     }
 
-    #[Pure]
     public function start(): int
     {
         return $this->start;
     }
 
-    #[Pure]
     public function end(): int
     {
         return $this->end;
     }
 
-    #[Pure]
     public function length(): int
     {
         return $this->isRangeRequest()

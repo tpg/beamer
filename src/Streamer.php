@@ -39,7 +39,7 @@ class Streamer
         );
     }
 
-    public function start()
+    public function start(): void
     {
         ob_clean();
 

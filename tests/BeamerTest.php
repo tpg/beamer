@@ -12,7 +12,7 @@ class BeamerTest extends TestCase
     /**
      * @test
      **/
-    public function it_can_load_a_filesystem_disk(): void
+    public function it_can_load_a_file_from_a_filesystem_disk(): void
     {
         $stream = Beamer::make('test.mp4');
 
