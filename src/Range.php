@@ -6,7 +6,6 @@ namespace TPG\Beamer;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use JetBrains\PhpStorm\Pure;
 use TPG\Beamer\Contracts\RangeInterface;
 
 class Range implements RangeInterface
